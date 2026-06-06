@@ -113,3 +113,44 @@ nav {
         font-size: 2rem;
     }
 }
+/* WHO ARE WE SECTION */
+
+.about {
+    padding: 80px 10%;
+    background: white;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: #1e293b;
+}
+
+.about p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: #444;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.hashtags {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.hashtags span {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    background: #1e293b;
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+}
