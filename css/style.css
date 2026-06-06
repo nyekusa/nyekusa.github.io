@@ -1,156 +1,198 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
-    background: #f5f5f5;
+html{
+    scroll-behavior:smooth;
 }
 
-/* Navbar */
-
-nav {
-    background: #1e293b;
-    color: white;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 1rem 5%;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height:1.6;
+    background:#f5f5f5;
+    color:#333;
 }
 
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+/* =========================
+   NAVBAR
+========================= */
+
+nav{
+    background:#1e293b;
+    color:white;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+.logo{
+    font-size:1.6rem;
+    font-weight:bold;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:30px;
 }
 
-.nav-links a:hover {
-    color: #38bdf8;
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
 }
 
-/* Hero Section */
+.nav-links a:hover{
+    color:#38bdf8;
+}
 
-.hero {
-    height: 80vh;
+/* =========================
+   HERO SECTION
+========================= */
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.hero{
+    height:80vh;
 
-    text-align: center;
-    padding: 2rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
 
-    background: linear-gradient(
-        rgba(0,0,0,0.6),
-        rgba(0,0,0,0.6)
+    text-align:center;
+    padding:20px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
     ),
     url("https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1500&q=80");
 
-    background-size: cover;
-    background-position: center;
+    background-size:cover;
+    background-position:center;
 
-    color: white;
+    color:white;
 }
 
-.hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+.hero h1{
+    font-size:3.5rem;
+    margin-bottom:20px;
 }
 
-.hero p {
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin-bottom: 2rem;
+.hero p{
+    max-width:700px;
+    font-size:1.2rem;
+    margin-bottom:30px;
 }
 
-.btn {
-    background: #38bdf8;
-    color: white;
+.btn{
+    display:inline-block;
 
-    padding: 12px 25px;
-    border-radius: 5px;
+    background:#38bdf8;
+    color:white;
 
-    text-decoration: none;
-    font-weight: bold;
+    padding:14px 28px;
+    border-radius:5px;
 
-    transition: 0.3s;
+    text-decoration:none;
+    font-weight:bold;
+
+    transition:0.3s;
 }
 
-.btn:hover {
-    background: #0ea5e9;
+.btn:hover{
+    background:#0ea5e9;
 }
 
-/* Mobile */
+/* =========================
+   ABOUT SECTION
+========================= */
 
-@media (max-width: 768px) {
+.about{
+    background:white;
+    padding:80px 10%;
+}
 
-    nav {
-        flex-direction: column;
-        gap: 1rem;
+.container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.about h2{
+    text-align:center;
+    font-size:2.8rem;
+    color:#1e293b;
+    margin-bottom:35px;
+}
+
+.about p{
+    font-size:1.1rem;
+    color:#555;
+    line-height:1.9;
+    margin-bottom:20px;
+    text-align:justify;
+}
+
+.hashtags{
+    text-align:center;
+    margin-top:40px;
+}
+
+.hashtags span{
+    display:inline-block;
+
+    background:#1e293b;
+    color:white;
+
+    padding:12px 22px;
+    border-radius:30px;
+
+    margin:8px;
+
+    font-weight:bold;
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
     }
 
-    .nav-links {
-        gap: 1rem;
+    .nav-links{
+        gap:15px;
     }
 
-    .hero h1 {
-        font-size: 2rem;
+    .hero h1{
+        font-size:2.2rem;
     }
-}
-/* WHO ARE WE SECTION */
 
-.about {
-    padding: 80px 10%;
-    background: white;
-}
+    .hero p{
+        font-size:1rem;
+    }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-}
+    .about h2{
+        font-size:2rem;
+    }
 
-.about h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-    color: #1e293b;
-}
-
-.about p {
-    font-size: 1.1rem;
-    line-height: 1.9;
-    color: #444;
-    margin-bottom: 20px;
-    text-align: justify;
-}
-
-.hashtags {
-    margin-top: 40px;
-    text-align: center;
-}
-
-.hashtags span {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 20px;
-    background: #1e293b;
-    color: white;
-    border-radius: 30px;
-    font-weight: bold;
+    .about p{
+        text-align:left;
+    }
 }
