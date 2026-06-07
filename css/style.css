@@ -166,6 +166,48 @@ nav{
 
     font-weight:bold;
 }
+/* PHOTOS PAGE */
+
+.photos-page{
+    min-height:80vh;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+    padding:40px;
+}
+
+.photos-page h1{
+    font-size:3rem;
+    color:#1e293b;
+    margin-bottom:20px;
+}
+
+.photos-page p{
+    max-width:700px;
+    font-size:1.1rem;
+    margin-bottom:30px;
+}
+
+.gallery-btn{
+    background:#1e293b;
+    color:white;
+
+    padding:15px 30px;
+    border-radius:8px;
+
+    text-decoration:none;
+    font-weight:bold;
+
+    transition:0.3s;
+}
+
+.gallery-btn:hover{
+    transform:translateY(-3px);
+}
 
 /* =========================
    MOBILE RESPONSIVE
