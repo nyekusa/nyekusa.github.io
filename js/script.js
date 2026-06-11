@@ -15,9 +15,9 @@ const hero = document.querySelector(".hero");
 
 const images = [
 
-    "images/banner/banner1.jpg",
+    "images/banner/banner1.JPG",
     "images/banner/banner2.jpg",
-    "images/banner/banner3.jpg",
+    "images/banner/banner3.JPG",
     "images/banner/banner4.jpg"
 
 ];
