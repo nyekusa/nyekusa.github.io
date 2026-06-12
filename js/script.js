@@ -15,10 +15,10 @@ const hero = document.querySelector(".hero");
 
 const images = [
 
-    "images/banner/banner1.JPG",
-    "images/banner/banner2.jpg",
-    "images/banner/banner3.JPG",
-    "images/banner/banner4.jpg"
+    "images/banner/banner1.webp",
+    "images/banner/banner2.webp",
+    "images/banner/banner3.webp",
+    "images/banner/banner4.webp"
 
 ];
 
