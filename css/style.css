@@ -481,3 +481,93 @@ footer{
 
     padding-bottom:20px;
 }
+/* =================================
+   EXECUTIVES SECTION
+================================= */
+
+.section-title{
+
+    color:#1F6A3A;
+
+    margin-top:40px;
+    margin-bottom:25px;
+
+    font-size:2rem;
+}
+
+/* Executive Grid */
+
+.executives-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:30px;
+
+    margin-bottom:60px;
+}
+
+/* Executive Card */
+
+.executive-card{
+
+    background:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 5px 20px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.executive-card:hover{
+
+    transform:translateY(-8px);
+}
+
+/* Executive Image */
+
+.executive-card img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+}
+
+/* Executive Name */
+
+.executive-card h3{
+
+    color:#1F6A3A;
+
+    margin-top:15px;
+}
+
+/* Position */
+
+.position{
+
+    color:#C8A13A;
+
+    font-weight:bold;
+
+    margin:10px 0;
+}
+
+/* Quote */
+
+.executive-card .quote{
+
+    padding:0 15px 20px;
+
+    color:#666;
+
+    font-style:italic;
+}
