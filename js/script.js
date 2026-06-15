@@ -39,3 +39,15 @@ function changeBanner(){
 changeBanner();
 
 setInterval(changeBanner,5000);
+function showExec(year){
+
+    let groups =
+    document.querySelectorAll('.executive-group');
+
+    groups.forEach(group=>{
+        group.style.display='none';
+    });
+
+    document.getElementById(year)
+    .style.display='grid';
+}
