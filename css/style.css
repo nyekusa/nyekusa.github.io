@@ -482,34 +482,22 @@ footer{
     padding-bottom:20px;
 }
 /* =================================
-   EXECUTIVES SECTION
+   EXECUTIVE GROUPS
 ================================= */
 
-.section-title{
+.executive-group{
 
-    color:#1F6A3A;
-
-    margin-top:40px;
-    margin-bottom:25px;
-
-    font-size:2rem;
-}
-
-/* Executive Grid */
-
-.executives-grid{
-
-    display:grid;
+    display:none;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(250px,1fr));
+    repeat(auto-fill,minmax(250px,1fr));
 
-    gap:30px;
+    gap:25px;
 
     margin-bottom:60px;
 }
 
-/* Executive Card */
+/* EXECUTIVE CARD */
 
 .executive-card{
 
@@ -520,28 +508,23 @@ footer{
     overflow:hidden;
 
     box-shadow:
-    0 5px 20px rgba(0,0,0,0.08);
+    0 4px 15px rgba(0,0,0,0.08);
 
     transition:0.3s;
 }
 
 .executive-card:hover{
 
-    transform:translateY(-8px);
+    transform:translateY(-5px);
 }
-
-/* Executive Image */
 
 .executive-card img{
 
     width:100%;
-
     height:auto;
 
     display:block;
 }
-
-/* Executive Name */
 
 .executive-card h3{
 
@@ -549,8 +532,6 @@ footer{
 
     margin-top:15px;
 }
-
-/* Position */
 
 .position{
 
@@ -560,8 +541,6 @@ footer{
 
     margin:10px 0;
 }
-
-/* Quote */
 
 .executive-card .quote{
 
