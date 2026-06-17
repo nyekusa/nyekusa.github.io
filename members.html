@@ -1,200 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NYEKUSA Members</title>
-
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYEKUSA – Members</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<nav>
-    <div class="logo">
-        <img src="images/logo.jpg" alt="NYEKUSA Logo">
-    </div>
-
-    <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="members.html">Members</a></li>
-        <li><a href="photos.html">Photos</a></li>
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="logo">
+      <img src="images/logo.jpg" alt="NYEKUSA Logo">
+      <span class="logo-text">NYEKUSA</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#stats">Impact</a></li>
+      <li><a href="members.html" class="active">Members</a></li>
+      <li><a href="photos.html">Gallery</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
 </nav>
 
-<section class="members-page">
-
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <p class="hero-eyebrow">Our People</p>
     <h1>NYEKUSA Members</h1>
-
-    <p>Select a membership year to view members.</p>
-<h2 class="section-title">
-    Executive Committee
-</h2>
-
-<div class="year-buttons">
-
-    <button onclick="showExec('exec2025_2026')">
-        2025 / 2026
-    </button>
-
-    <button onclick="showExec('exec2024_2025')">
-        2024 / 2025
-    </button>
-
-    <button onclick="showExec('exec2023_2024')">
-        2023 / 2024
-    </button>
-
+    <p>The heart of our association — passionate, driven, united.</p>
+  </div>
 </div>
-    <div class="executive-group" id="exec2025_2026">
 
-    <div class="executive-card">
+<!-- EXECUTIVE COMMITTEE -->
+<section class="members-section" id="executives">
+  <div class="container">
+    <p class="section-eyebrow center">Leadership</p>
+    <h2 class="section-title center">Executive Committee</h2>
 
-        <img src="images/executives/chairperson.jpg">
-
-        <h3>John Mwangi</h3>
-
-        <p class="position">
-            Chairperson
-        </p>
-
-        <p class="quote">
-            "Unity is our strength."
-        </p>
-
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="showExec('exec2025_2026', this)">2025 / 2026</button>
+      <button class="tab-btn" onclick="showExec('exec2024_2025', this)">2024 / 2025</button>
+      <button class="tab-btn" onclick="showExec('exec2023_2024', this)">2023 / 2024</button>
     </div>
 
-    <div class="executive-card">
-
-        <img src="images/executives/briankaraba.webp">
-
-        <h3>Brian Karaba Wachira</h3>
-
-        <p class="position">
-            Vice-Chair
-        </p>
-
-        <p class="quote">
-            "Make sure your kids live a better life."
-        </p>
-
+    <div class="executive-group active-group" id="exec2025_2026">
+      <div class="executive-card">
+        <div class="exec-img-wrap">
+          <img src="images/executives/chairperson.jpg" alt="Chairperson" onerror="this.src='images/logo.jpg'">
+        </div>
+        <div class="exec-info">
+          <h3>John Mwangi</h3>
+          <p class="position">Chairperson</p>
+          <p class="quote">"Unity is our strength."</p>
+        </div>
+      </div>
+      <div class="executive-card">
+        <div class="exec-img-wrap">
+          <img src="images/executives/briankaraba.webp" alt="Brian Karaba">
+        </div>
+        <div class="exec-info">
+          <h3>Brian Karaba Wachira</h3>
+          <p class="position">Vice-Chairperson</p>
+          <p class="quote">"Make sure your kids live a better life."</p>
+        </div>
+      </div>
     </div>
 
-</div>
     <div class="executive-group" id="exec2024_2025">
-
-    <div class="executive-card">
-
-        <img src="images/executives/briankaraba24.webp">
-
-        <h3>Brian Karaba Wachira</h3>
-
-        <p class="position">
-            Secretary General
-        </p>
-
-        <p class="quote">
-            "The Game is yours.Play by your rules."
-        </p>
-
-    </div>
-
-</div>
-<h2 class="section-title">
-    General Members
-</h2>
-    <div class="year-buttons">
-
-        <button onclick="showYear('2026')">2026</button>
-        <button onclick="showYear('2025')">2025</button>
-        <button onclick="showYear('2024')">2024</button>
-
-    </div>
-
-    <!-- 2026 MEMBERS -->
-
-    <div class="member-group" id="2026">
-
-        <div class="member-card">
-
-            <img src="images/members/member1.jpg">
-
-            <h3>John Doe</h3>
-
-            <p class="course">
-                BSc Computer Science
-            </p>
-
-            <p class="quote">
-                "Future Leader"
-            </p>
-
+      <div class="executive-card">
+        <div class="exec-img-wrap">
+          <img src="images/executives/briankaraba24.webp" alt="Brian Karaba">
         </div>
-
-        <div class="member-card">
-
-            <img src="images/members/member2.jpg">
-
-            <h3>Mary Wanjiku</h3>
-
-            <p class="course">
-                Mechanical Engineering
-            </p>
-
-            <p class="quote">
-                "Always Growing"
-            </p>
-
+        <div class="exec-info">
+          <h3>Brian Karaba Wachira</h3>
+          <p class="position">Secretary General</p>
+          <p class="quote">"The game is yours. Play by your rules."</p>
         </div>
-
+      </div>
     </div>
 
-    <!-- 2025 MEMBERS -->
-
-    <div class="member-group" id="2025">
-
-        <div class="member-card">
-
-            <img src="images/members/member3.jpg">
-
-            <h3>James Mwangi</h3>
-
-            <p class="course">
-                Nursing
-            </p>
-
-            <p class="quote">
-                "Community First"
-            </p>
-
-        </div>
-
+    <div class="executive-group" id="exec2023_2024">
+      <p class="empty-state">Records for 2023/2024 coming soon.</p>
     </div>
-
-    <!-- 2024 MEMBERS -->
-
-    <div class="member-group" id="2024">
-
-        <div class="member-card">
-
-            <img src="images/members/briankaraba.webp">
-
-            <h3>CEO Brian Karaba Wachira</h3>
-
-            <p class="course">
-                Bsc.Computer Science
-            </p>
-
-            <p class="quote">
-                "Life's Awesome.Make every moment count."
-            </p>
-
-        </div>
-
-    </div>
-
+  </div>
 </section>
 
-<script src="js/script.js"></script>
+<!-- GENERAL MEMBERS -->
+<section class="members-section alt-bg" id="general-members">
+  <div class="container">
+    <p class="section-eyebrow center">Our Family</p>
+    <h2 class="section-title center">General Members</h2>
 
+    <div class="tab-bar">
+      <button class="tab-btn active" onclick="showYear('m2026', this)">2026</button>
+      <button class="tab-btn" onclick="showYear('m2025', this)">2025</button>
+      <button class="tab-btn" onclick="showYear('m2024', this)">2024</button>
+    </div>
+
+    <div class="member-group active-group" id="m2026">
+      <div class="member-card">
+        <div class="member-img-wrap">
+          <img src="images/members/member1.jpg" alt="John Doe" onerror="this.src='images/logo.jpg'">
+        </div>
+        <h3>John Doe</h3>
+        <p class="course">BSc Computer Science</p>
+        <p class="quote">"Future Leader"</p>
+      </div>
+      <div class="member-card">
+        <div class="member-img-wrap">
+          <img src="images/members/member2.jpg" alt="Mary Wanjiku" onerror="this.src='images/logo.jpg'">
+        </div>
+        <h3>Mary Wanjiku</h3>
+        <p class="course">Mechanical Engineering</p>
+        <p class="quote">"Always Growing"</p>
+      </div>
+    </div>
+
+    <div class="member-group" id="m2025">
+      <div class="member-card">
+        <div class="member-img-wrap">
+          <img src="images/members/member3.jpg" alt="James Mwangi" onerror="this.src='images/logo.jpg'">
+        </div>
+        <h3>James Mwangi</h3>
+        <p class="course">Nursing</p>
+        <p class="quote">"Community First"</p>
+      </div>
+    </div>
+
+    <div class="member-group" id="m2024">
+      <div class="member-card">
+        <div class="member-img-wrap">
+          <img src="images/members/briankaraba.webp" alt="Brian Karaba">
+        </div>
+        <h3>Brian Karaba Wachira</h3>
+        <p class="course">BSc Computer Science</p>
+        <p class="quote">"Life's awesome. Make every moment count."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="images/logo.jpg" alt="NYEKUSA Logo">
+      <span>NYEKUSA</span>
+    </div>
+    <nav class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="members.html">Members</a>
+      <a href="photos.html">Gallery</a>
+    </nav>
+    <p class="footer-copy">&copy; <span id="year"></span> NYEKUSA · Dedan Kimathi University of Technology</p>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
 </body>
 </html>
