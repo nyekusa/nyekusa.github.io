@@ -339,7 +339,7 @@ img { display: block; max-width: 100%; }
   width: 100%;
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  object-fit: cover;
+  object-fit: contain;
   height: 400px;
 }
 .vs-badge {
