@@ -340,7 +340,8 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
   object-fit: cover;
-  height: 420px;
+  object-position: center 20%;
+  height: 400px;
 }
 .vs-badge {
   position: absolute;
