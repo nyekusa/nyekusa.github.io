@@ -635,17 +635,17 @@ footer {
 
 .album-count { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
 
-/* Gallery grid — CSS Grid, auto-rows sized by content */
+/* Gallery grid — CSS columns masonry: no gaps, images at natural height */
 .album-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.25rem;
-  align-items: start;   /* each card sits at natural height, no stretching */
+  columns: 3;
+  column-gap: 1.25rem;
 }
 
 .album-card {
   display: block;
   width: 100%;
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
   text-decoration: none;
   color: inherit;
   background: var(--white);
@@ -653,12 +653,13 @@ footer {
   overflow: hidden;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
-  transition: var(--transition);
+  transition: box-shadow 0.35s ease, border-color 0.35s ease;
+  margin-bottom: 1.25rem;
 }
-.album-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+.album-card:hover { box-shadow: var(--shadow-lg); border-color: var(--green); }
 .album-card.hidden { display: none; }
 
-/* Image wrapper — NO fixed height. Image fills 100% width at natural ratio */
+/* Image: full width, natural height — zero cropping */
 .album-img-wrap {
   position: relative;
   overflow: hidden;
@@ -668,7 +669,7 @@ footer {
 .album-img-wrap img {
   display: block;
   width: 100%;
-  height: auto;          /* natural aspect ratio — zero cropping */
+  height: auto;
   transition: transform 0.45s ease;
 }
 .album-card:hover .album-img-wrap img { transform: scale(1.04); }
@@ -744,12 +745,12 @@ footer {
   .activity-grid { grid-template-columns: 1fr; }
   .preview-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
   .preview-item.large, .preview-item { height: 200px; }
-  .album-grid { grid-template-columns: repeat(2, 1fr); }
+  .album-grid { columns: 2; }
 }
 
 @media (max-width: 500px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-  .album-grid { grid-template-columns: 1fr; }
+  .album-grid { columns: 1; }
   .contact-cards { grid-template-columns: 1fr; }
 }
 /* ===== WHATSAPP BUTTON ===== */
