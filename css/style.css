@@ -635,25 +635,48 @@ footer {
 
 .album-count { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
 
+/* Gallery grid — CSS Grid, auto-rows sized by content */
 .album-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  align-items: start;   /* each card sits at natural height, no stretching */
 }
+
 .album-card {
-  display: block; text-decoration: none; color: inherit;
-  background: var(--white); border-radius: var(--radius);
-  overflow: hidden; box-shadow: var(--shadow);
-  border: 1px solid var(--border); transition: var(--transition);
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: inherit;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: var(--transition);
 }
-.album-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
+.album-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .album-card.hidden { display: none; }
 
-.album-img-wrap { position: relative; overflow: hidden; height: 200px; background: var(--green-l); }
-.album-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
-.album-card:hover .album-img-wrap img { transform: scale(1.08); }
+/* Image wrapper — NO fixed height. Image fills 100% width at natural ratio */
+.album-img-wrap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  background: var(--green-l);
+}
+.album-img-wrap img {
+  display: block;
+  width: 100%;
+  height: auto;          /* natural aspect ratio — zero cropping */
+  transition: transform 0.45s ease;
+}
+.album-card:hover .album-img-wrap img { transform: scale(1.04); }
+
+/* Hover overlay — positioned over the image area */
 .album-hover {
-  position: absolute; inset: 0;
+  position: absolute;
+  inset: 0;
   background: rgba(31,106,58,0.75);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; transition: var(--transition);
@@ -661,18 +684,18 @@ footer {
 .album-card:hover .album-hover { opacity: 1; }
 .album-hover span { color: var(--white); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.05em; }
 
-.album-info { padding: 1rem 1.1rem 1.2rem; }
+.album-info { padding: 0.9rem 1rem 1.1rem; }
 .album-tag {
-  display: inline-block; font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 0.1em; text-transform: uppercase;
+  display: inline-block; font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--green); background: var(--green-l);
-  padding: 0.2rem 0.6rem; border-radius: 4px; margin-bottom: 0.5rem;
+  padding: 0.2rem 0.55rem; border-radius: 4px; margin-bottom: 0.4rem;
 }
-.album-tag.hike { color: #7B4F00; background: #FFF3E0; }
+.album-tag.hike       { color: #7B4F00; background: #FFF3E0; }
 .album-tag.mentorship { color: #1a3f7a; background: #e8eef8; }
 
-.album-info h3 { font-family: 'Playfair Display', serif; color: var(--green); font-size: 1rem; margin-bottom: 0.25rem; }
-.album-info p { color: var(--muted); font-size: 0.85rem; }
+.album-info h3 { font-family: 'Playfair Display', serif; color: var(--green); font-size: 0.95rem; margin-bottom: 0.2rem; line-height: 1.3; }
+.album-info p  { color: var(--muted); font-size: 0.82rem; }
 
 .no-results { text-align: center; color: var(--muted); font-style: italic; padding: 3rem; font-size: 1rem; }
 
@@ -727,7 +750,6 @@ footer {
 @media (max-width: 500px) {
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .album-grid { grid-template-columns: 1fr; }
-  .album-img-wrap { height: 220px; }
   .contact-cards { grid-template-columns: 1fr; }
 }
 /* ===== WHATSAPP BUTTON ===== */
