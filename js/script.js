@@ -146,8 +146,9 @@ const countEl     = document.getElementById('visibleCount');
 const noResults   = document.getElementById('noResults');
 
 if (filterBtns.length && albumGrid) {
-  // Store all cards once on load
+  // Snapshot original DOM order once — never changes
   const allCards = Array.from(albumGrid.querySelectorAll('.album-card'));
+  allCards.forEach((card, i) => { card.dataset.order = i; });
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -156,21 +157,18 @@ if (filterBtns.length && albumGrid) {
 
       const filter = btn.dataset.filter;
 
-      // Remove all cards from DOM
+      // Pull all cards out
       allCards.forEach(card => card.remove());
 
-      // Re-insert only matching cards — columns reflow cleanly
-      let visible = 0;
-      allCards.forEach(card => {
-        const match = filter === 'all' || card.dataset.category === filter;
-        if (match) {
-          albumGrid.appendChild(card);
-          visible++;
-        }
-      });
+      // Re-insert in original order — sort by data-order index
+      const toShow = allCards
+        .filter(card => filter === 'all' || card.dataset.category === filter)
+        .sort((a, b) => a.dataset.order - b.dataset.order);
 
-      if (countEl) countEl.textContent = visible;
-      if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
+      toShow.forEach(card => albumGrid.appendChild(card));
+
+      if (countEl) countEl.textContent = toShow.length;
+      if (noResults) noResults.style.display = toShow.length === 0 ? 'block' : 'none';
     });
   });
 }
