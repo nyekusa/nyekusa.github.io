@@ -141,26 +141,36 @@ function showExec(id, btn) {
 
 /* ===== GALLERY FILTER ===== */
 const filterBtns = document.querySelectorAll('.filter-btn');
-const albumCards  = document.querySelectorAll('.album-card');
+const albumGrid   = document.getElementById('albumGrid');
 const countEl     = document.getElementById('visibleCount');
 const noResults   = document.getElementById('noResults');
 
-filterBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    filterBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
+if (filterBtns.length && albumGrid) {
+  // Store all cards once on load
+  const allCards = Array.from(albumGrid.querySelectorAll('.album-card'));
 
-    const filter = btn.dataset.filter;
-    let visible = 0;
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-    albumCards.forEach(card => {
-      const cat = card.dataset.category;
-      const show = filter === 'all' || cat === filter;
-      card.classList.toggle('hidden', !show);
-      if (show) visible++;
+      const filter = btn.dataset.filter;
+
+      // Remove all cards from DOM
+      allCards.forEach(card => card.remove());
+
+      // Re-insert only matching cards — columns reflow cleanly
+      let visible = 0;
+      allCards.forEach(card => {
+        const match = filter === 'all' || card.dataset.category === filter;
+        if (match) {
+          albumGrid.appendChild(card);
+          visible++;
+        }
+      });
+
+      if (countEl) countEl.textContent = visible;
+      if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
     });
-
-    if (countEl) countEl.textContent = visible;
-    if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none';
   });
-});
+}
