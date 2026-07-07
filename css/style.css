@@ -588,8 +588,8 @@ footer {
   border: 1px solid var(--border); transition: var(--transition); text-align: center;
 }
 .executive-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-lg); }
-.exec-img-wrap { overflow: hidden; background: var(--green-l); }
-.exec-img-wrap img { width: 100%; height: auto; display: block; transition: transform 0.45s ease; }
+.exec-img-wrap { position: relative; overflow: hidden; height: 280px; background: var(--green-l); }
+.exec-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.45s ease; }
 .executive-card:hover .exec-img-wrap img { transform: scale(1.06); }
 .exec-info { padding: 1.4rem; }
 .exec-info h3 { color: var(--green); font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 0.3rem; }
@@ -610,8 +610,8 @@ footer {
   transition: var(--transition); padding-bottom: 1.2rem;
 }
 .member-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-.member-img-wrap { overflow: hidden; background: var(--green-l); }
-.member-img-wrap img { width: 100%; height: auto; display: block; transition: transform 0.4s ease; }
+.member-img-wrap { height: 160px; overflow: hidden; background: var(--green-l); }
+.member-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
 .member-card:hover .member-img-wrap img { transform: scale(1.08); }
 .member-card h3 { color: var(--green); font-family: 'Playfair Display', serif; font-size: 1rem; margin: 1rem 0.75rem 0.25rem; }
 .course { color: var(--muted); font-size: 0.85rem; padding: 0 0.75rem; }
