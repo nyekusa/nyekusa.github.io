@@ -876,3 +876,8 @@ footer {
     object-position: center top;
   }
 }
+@media (max-width: 768px) {
+  .chris-img {
+    object-position: center top;
+  }
+}
