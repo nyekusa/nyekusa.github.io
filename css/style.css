@@ -793,3 +793,62 @@ footer {
   flex-shrink: 0;
   filter: drop-shadow(0 1px 2px rgba(0,0,0,0.15));
 }
+
+/* ===== MOBILE PORTRAIT FIXES ===== */
+
+/* Executive cards: on mobile, reduce fixed height so less cropping */
+@media (max-width: 768px) {
+  /* Executives — 2 columns on mobile, shorter image box */
+  .executive-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .exec-img-wrap {
+    height: 220px;
+  }
+
+  /* Member cards — 2 columns on mobile, already 280px height */
+  .member-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .member-img-wrap {
+    height: 220px;
+  }
+
+  /* Home preview: remove fixed height so images show fully */
+  .preview-item.large,
+  .preview-item {
+    height: auto;
+    min-height: 160px;
+  }
+  .preview-item img {
+    position: relative;
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Single column on very small screens */
+  .executive-group {
+    grid-template-columns: 1fr;
+  }
+  .exec-img-wrap {
+    height: auto;
+    max-height: 320px;
+  }
+  .exec-img-wrap img {
+    height: auto;
+    max-height: 320px;
+    object-fit: contain;
+    background: var(--green-l);
+  }
+
+  .member-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .member-img-wrap {
+    height: 200px;
+  }
+}
