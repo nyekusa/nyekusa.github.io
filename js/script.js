@@ -36,7 +36,9 @@ const heroImages = [
   'images/banner/banner1.webp',
   'images/banner/banner2.webp',
   'images/banner/banner3.webp',
-  'images/banner/banner4.webp'
+  'images/banner/banner4.webp',
+  'images/banner/banner5.webp'
+   
 ];
 
 const heroSlides = document.getElementById('heroSlides');
